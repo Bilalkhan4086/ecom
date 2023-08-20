@@ -28,11 +28,7 @@ export default function Products({ products }: ProductsCompProps) {
             return (
               <Link
                 key={product._id}
-                href={`${
-                  process.env.NODE_ENV === "development"
-                    ? process.env.NEXT_PUBLIC_LOCAL_HOST
-                    : process.env.NEXT_PUBLIC_PRODUCTION
-                }/productdetails/${product._id}`}
+                href={`/productdetails/${product._id}`}
                 className="group"
               >
                 <div className="aspect-h-1 aspect-w-1 h-[280px] w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">

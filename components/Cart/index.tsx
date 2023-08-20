@@ -51,7 +51,7 @@ export default function Cart({
       setShowSignin(true);
     } else {
       try {
-        const fetchHist = await fetch("http://localhost:3000/api/checkout", {
+        const fetchHist = await fetch("/api/checkout", {
           cache: "no-store",
           method: "POST",
           body: JSON.stringify({

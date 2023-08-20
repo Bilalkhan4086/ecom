@@ -10,8 +10,8 @@ const Lines = () => {
         <div>
           <ShaddowIconed bgColor={"bg-pink-500"} Icon={HiShoppingCart} />
           <SimpleLine
-            lineId="line1"
-            lineBg="from-pink-500 to-blue-500 max-lg:h-[370px] max-xl:h-[440px] h-[300px]"
+            lineId=""
+            lineBg="from-pink-500 to-blue-500 max-lg:h-[370px] show-line-by-default max-xl:h-[440px] h-[300px]"
           />
         </div>
         <div>

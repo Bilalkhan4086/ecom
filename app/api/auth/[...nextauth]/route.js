@@ -6,6 +6,7 @@ import clientPromise from "../../utils/connection";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 
 const handler = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   adapter: MongoDBAdapter(clientPromise) || {},
   providers: [
     // OAuth authentication providers...

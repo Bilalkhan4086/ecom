@@ -34,8 +34,16 @@ export async function POST(request: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: "payment",
-      success_url: `http://localhost:3000/?success=true&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `http://localhost:3000/products`,
+      success_url: `${
+        process.env.NODE_ENV === "development"
+          ? process.env.NEXT_PUBLIC_LOCAL_HOST
+          : process.env.NEXT_PUBLIC_PRODUCTION
+      }/?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${
+        process.env.NODE_ENV === "development"
+          ? process.env.NEXT_PUBLIC_LOCAL_HOST
+          : process.env.NEXT_PUBLIC_PRODUCTION
+      }/products`,
       customer_email: customerEMail,
     });
     console.log("session url 16 =>", session.url);
